@@ -1,17 +1,4 @@
-.App {
-  border:3px solid gray;
-  margin:  200px 500px; 
-  padding: 25px 100px;
-  border-radius: 20px;
-}
 
-.to-do-container{
-  display: flex;
-  flex-direction: column;
-}
-h1{
-  text-align: center;
-}
 
 .to-do-container ul li{
   width:170px;

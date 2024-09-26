@@ -15,19 +15,26 @@ function App() {
    newTodos[index].completed=!newTodos[index].completed
    setTodos(newTodos)
   }
-
+    
   return (
-    <div className="App">
-    <h1>To do list</h1>
-    <div className="to-do-container">
-    <ul>
+  
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-blue-400 to-purple-500  items-center justify-center">
+      <div className="bg-white rounded-lg shadow-xl p-11">
+     <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">To-Do List</h1>
+
+    <div className="space-x-4">
+
+    <input className="py-2 text-center border-2 border-zinc-500" ref={inputRef} placeholder="Enter Task"/> 
+    <button className="bg bg-sky-300 py-2 px-7" onClick={handleAddTodo}>Add</button>
+    <ul className="cursor-pointer mt-6 rounded-md">
      {todos.map(({text,completed},index)=>{
-       return <li className={completed?"done":""} key={index} onClick={()=> handleItemDone(index)}>{text}</li>;
+       return <li className={completed?"done":""} key={index} onClick={()=> handleItemDone(index)}><span className=" ">
+       {completed ? '✅' : '👉'}
+     </span>{text}</li>;
      })}
     </ul>
-    <input ref={inputRef} placeholder="Enter item..."/> 
-    <button onClick={handleAddTodo}>Add</button>
   </div> 
+  </div>
   </div>
   );
 }
